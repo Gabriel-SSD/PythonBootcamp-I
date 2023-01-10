@@ -5,6 +5,7 @@ MOVE_DISTANCE = 15
 
 class Player(Turtle):
     def __init__(self):
+        # Configurações da tartaruga
         super().__init__()
         self.setheading(90)
         self.penup()
@@ -14,4 +15,5 @@ class Player(Turtle):
     def move(self):
         self.fd(MOVE_DISTANCE)
     def nextlvl(self):
+        # Volta para a posição inicial
         self.goto(STARTING_POSITION)

@@ -11,8 +11,10 @@ class CarManager:
         self.speed = STARTING_MOVE_DISTANCE
         self.cars = []
     def create_cars(self):
-        random_num = randint(1, 3)
+        # Gera um número aleatório para ser a frequência da criação de carros
+        random_num = randint(1, 4)
         if random_num == 1:
+            # Cria um carro, com o Y aleatório, e adiciona o carro na lista de todos os carros
             new_car = Turtle("square")
             new_car.color(choice(COLORS))
             new_car.penup()
@@ -20,7 +22,9 @@ class CarManager:
             new_car.goto(STARTING_X, choice(STARTING_Y))
             self.cars.append(new_car)
     def move_cars(self):
+        # Percorre toda a lista de carros, e os move
         for f in self.cars:
             f.bk(self.speed)
     def speed_up(self):
+        # Aumenta a velocidade
         self.speed += MOVE_INCREMENT
